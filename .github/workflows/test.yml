@@ -12,8 +12,9 @@ jobs:
         with:
           submodules: true  
       - name: test
-        uses: PenguinCabinet/tyranoscript-packager-action@v0.1.14
+        uses: PenguinCabinet/tyranoscript-packager-action@v0.1.15
         with:
           workingdirectory: "test"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: $(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+          upload_url: ${{ github.event.release.upload_url }}
