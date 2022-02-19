@@ -16,4 +16,4 @@ jobs:
         with:
           workingdirectory: "test"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag: $(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+          tag:  ${{ github.ref }}
